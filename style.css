@@ -5,65 +5,360 @@ body {
     background-attachment: fixed;
     background-position: center;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
     min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Définition d'une marge ( en hauteur) d'où démarre le Main après le Header
+car le header est en fixed et que le contenu passe en dessous 
+Cette marge s'adapte à différents breakpoints suivant la hauteur du header */
+.startTopMargin {
+    height: 245px;
+}
+
+/*  ----------------------------------------------
+    --HEADER + LOGOS + MENU ( DESKTOP ET MOBILE )-
+    ----------------------------------------------  */
+
+/* définition du header en fixed pour un header qui ne scroll pas */
 header {
-    z-index: 2;
-    padding-right: 5px;
-    padding-left: 5px;
-    height: 56px;
+    position: fixed;
+}
+
+/* Bandeau header contenant le logo */
+.headerBandeau {
     width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
-    background-color: rgb(68, 67, 67);
-    border-block-end-color: rgb(68, 67, 67);
-    border-width: 3px;
+    min-height: 52px; 
+    height:auto;
+    background: rgb(56,56,56);
+    background: linear-gradient(102deg, rgba(56,56,56,1) 3%, rgba(115,115,115,1) 12%, rgba(182,180,180,1) 20%, rgba(210,210,210,1) 26%, rgba(116,116,116,1) 33%, rgba(82,82,82,1) 39%, rgba(115,115,115,1) 45%, rgba(127,135,132,1) 48%, rgba(149,163,159,1) 50%, rgba(142,153,151,1) 51%, rgba(125,133,131,1) 53%, rgba(99,99,99,1) 55%, rgba(91,91,91,1) 57%, rgba(116,116,116,1) 63%, rgba(210,210,210,1) 70%, rgba(182,180,180,1) 79%, rgba(115,115,115,1) 86%, rgba(56,56,56,1) 96%);
     border-style: groove;
-    border-radius: 1px;
-    display: inline-block;
+    margin: 0;
 }
 
-.header2 {
-    display: inline-block; 
+.desktopLogo {
+    max-width: 1440px;
+    width: 100%;
+    height: auto;
 }
 
-.menu {
-    display: inline-block;
-    width: 60%;
-    float: right;
-    text-align: center;
-    top: -3px;
+.mobileLogo {
+    width: 100%;
+    height: auto;
+    display: none;
 }
 
-.menu li{
-    display: inline-block;
-    padding-left: 1rem;
-    padding-right: 1rem;
+/* Bandeau contenant le menu nav en mode desktop */
+.headerGlobalNav {
+    width: 100%;
+    height: auto;
+    /* background-color: rgba(2, 2, 2, 0.86); */
+    background: linear-gradient(-72deg, rgba(71,70,70,1) 0%, rgba(105,105,105,1) 3%, rgba(255,255,255,1) 8%, rgba(222,222,255,1) 13%, rgba(255,255,255,1) 17%, rgba(175,175,175,1) 22%, rgba(222,222,255,1) 28%, rgba(245,245,245,1) 29%, rgba(200,186,186,1) 35%, rgba(182,182,182,1) 42%, rgba(142,142,143,1) 50%, rgba(121,121,121,1) 58%, rgba(109,109,110,1) 66%, rgba(206,206,206,1) 72%, rgba(255,255,255,1) 78%, rgba(222,222,255,1) 83%, rgba(255,255,255,1) 87%, rgba(222,222,255,1) 91%, rgba(76,76,78,1) 97%, rgba(74,74,74,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: groove;
 }
 
-.logo {
-    margin-top: 3px;
-    width: auto;
-    height: 50px;
-    float: left;
+.headerDesktopMenu {
+    max-width: 1440px;
+    width: 100%;
+    height:50px;
+    padding-top: 2px;
 }
 
-
-.menu-item {
+.desktopMenu {
+    display: flex;
+    list-style-type: none;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
 }
 
-.menu-item2 {
+.menu-item button{
+    Width: 120px;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    border-style: outset;
+    border-color: white;
+    border-width: 3px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px black;
+    padding: 13px;
 }
 
-.menu-item2 {
+.menu-activeItem button{
+    width: 120px;
+    background-color: rgb(205, 203, 203);
+    color: black;
+    font-weight: bold;
+    border-style: outset;
+    border-color: rgb(216, 216, 216);
+    border-width: 3px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px black;
+    padding: 13px;
 }
 
-button {
-    border-radius: 20px;
-    box-shadow: 2px 2px 4px;
-    padding: 10px;
+.menu-item button:hover{
+    transition: all 0.2s;
+    background-color: rgb(34, 34, 35);
+    font-weight: 700;
+    padding: 14px;
+}
+
+.menu-activeItem button:hover{
+    transition: all 0.2s;
+    background-color: rgb(165, 165, 167);
+    font-weight: 700;
+    padding: 14px;
+}
+
+/* Menu Burger (icone + menu déroulant mobile) */
+.headerGlobalBurger {
+    /*display: none;*/
+}
+
+.icone-MenuBurger {
+    display: none;
+}
+
+.icone-MenuBurger svg {
+    background-color: grey;
+    border: solid;
+    border-width: 2px;
+    border-radius: 6px;
+    border-color: White;
+    box-shadow: 4px 4px 8px black;
+    stroke: white;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+
+.headerMobileMenu {
+    display: none;
+}
+
+.icone-CloseBurger {
+    display: none;
+}
+
+.icone-CloseBurger svg {
+    background-color: grey;
+    border: solid;
+    border-width: 2px;
+    border-radius: 6px;
+    border-color: White;
+    box-shadow: 4px 4px 8px black;
+    stroke: white;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    right: 10px;
+}
+
+/*  -----------------------------------------------
+    - CONTENU DU MAIN (SECTIONS, ARTICLES ETC...) -
+    -----------------------------------------------  */
+
+main {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.largeArticle {
+    max-width: 1440px;
+    width: 100%;
+    background-color: aqua;
+}
+
+/*  -----------------------------------------------
+    -REDEFINITION DES POINTS DE RUPTURE RESPONSIVE-
+    -----------------------------------------------  */
+
+@media (min-width: 1440px) {
+    /*agrandissement largeur boutons Menu au dessus de 1440px de large */
+    .menu-item button{
+        Width: 150px;
+    }
+
+    .menu-activeItem button{
+        width: 150px;
+    }
+    
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+    /*changement de la hauteur de début de MAIN (sous HEADER)*/
+    .startTopMargin {
+        height: 225px;
+    }
+    /*agrandissement largeur boutons Menu entre 1440px et 1281px */
+    .menu-item button{
+        Width: 140px;
+    }
+
+    .menu-activeItem button{
+        width: 140px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    /*changement de la hauteur de début de MAIN (sous HEADER)*/
+    .startTopMargin {
+        height: 195px;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+    /*changement de la hauteur de début de MAIN (sous HEADER)*/
+    .startTopMargin {
+        height: 165px;
+    }
+}
+
+/* BREAKPOINT DESKTOP / MOBILE (AVEC MENU BURGER) */
+@media (max-width: 800px) {
+    /*changement de la hauteur de début de MAIN (sous HEADER)*/
+    .startTopMargin {
+        height: 80px;
+    }
+    /*changement pour un background vertical */
+    body {
+        background-image: url("Ressources/Background-PictureMobile.jpg");
+    }
+    /*passage du logo desktop au logo mobile*/
+    .desktopLogo {
+        display: none;
+    }
+
+    .mobileLogo {
+        display: block;
+    }
+
+    /*passage du Menu desktop au Menu Burger Mobile*/
+    .headerGlobalNav {
+        display: none;
+    }
+
+    .icone-MenuBurger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .icone-MenuBurger.close {
+        display: none;
+    }
+
+
+
+    /*Menu déroulant qui apparait/disparait au clic sur le menu bruger */
+    .headerGlobalBurger {
+        display: none;
+        cursor: pointer;
+    }
+
+    /*Classe ajoutée pour changer le statut du Menu déroulant (visible/non-visible) */
+    .headerGlobalBurger.open {
+        display: flex;
+        animation: transformMenu 300ms ease-in-out forwards;
+    }
+
+    @keyframes transformMenu {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: initial;
+        }
+    }
+
+    /*Menu déroulant (du menu burger) au clic */
+    .headerMobileMenu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 440px;
+        background-color: rgb(77, 76, 76);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .mobileMenu {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-top: 60px;
+        border: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+
+    .mobileMenu  li{
+        width: 100%;
+        padding: 20px;
+        padding-left: 40px;
+        border: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+
+    .burger-item, .burger-activeItem {
+        color: white;
+        font-size: 25px;
+        font-weight: 700px;
+        text-decoration: none;
+    }
+
+    .burger-activeItem {
+        color: rgb(159, 158, 158) ;
+    }
+
+    .icone-CloseBurger {
+        display: block;
+    }
+
+    .overlay-mobileMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.8);
+        display: none;
+    }
+    .overlay-mobileMenu.open {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    /*changement de la hauteur de début de MAIN (sous HEADER)*/
+    .startTopMargin {
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    /*changement de la hauteur de début de MAIN (sous HEADER)*/
+    .startTopMargin {
+        height: 60px;
+    }
 }

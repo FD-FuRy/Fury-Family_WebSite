@@ -10,27 +10,59 @@
     <meta name="description" 
           content="La Fury Family est une petite communauté multi-gaming française (crée autour d'une famille et ses amis de jeux vidéos). Jouant principalement à des FPS, vous pouvez aussi nous retrouver sur tous types de jeux (RTS, MMO...). Nous privilégions humour et décontraction en joueant.">
 </head>
-
 <body>
-
+    <div class="overlay-mobileMenu" onclick="closeMenuMobile()"></div>
     <header>
-        <div class="header2">
-            <img
-                src="Ressources/FF-logo01.png"
-                alt="logo de la Fury Family"
-                class="logo"
-            />
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html" class="menu-item"><button>ACCUEIL</button></a></li>
+        <div class="headerBandeau">
+            <img    src="Ressources/FF-logo02.png"
+                    alt="Logo de la Fury Family"
+                    class="desktopLogo"/>
+            <img    src="Ressources/FF-logo01.png"
+                    alt="Logo de la Fury Family"
+                    class="mobileLogo"/>
+        </div>
+        <div class="headerGlobalNav">
+            <nav class="headerDesktopMenu">
+                <ul class="desktopMenu">
+                    <li><a href="index.html" class="menu-activeItem"><button>ACCUEIL</button></a></li>
                     <li><a href="PagesHtml/nos_jeux.html" class="menu-item"><button>NOS JEUX</button></a></li>
                     <li><a href="PagesHtml/minecraft.html" class="menu-item"><button>MINECRAFT</button></a></li>
                     <li><a href="PagesHtml/discord.html" class="menu-item"><button>DISCORD</button></a></li>
                     <li><a href="PagesHtml/contactez-nous.html" class="menu-item"><button>CONTACT</button></a></li>
                 </ul>
-            </nav> 
+            </nav>
         </div>
+        <div class="headerGlobalBurger">
+            <div class="icone-CloseBurger" onclick="closeMenuMobile()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>                  
+            </div>
+            <nav class="headerMobileMenu">
+                <ul class="mobileMenu">
+                    <li><a href="index.html" class="burger-activeItem">ACCUEIL</a></li>
+                    <li><a href="PagesHtml/nos_jeux.html" class="burger-item">NOS JEUX</a></li>
+                    <li><a href="PagesHtml/minecraft.html" class="burger-item">MINECRAFT</a></li>
+                    <li><a href="PagesHtml/discord.html" class="burger-item">DISCORD</a></li>
+                    <li><a href="PagesHtml/contactez-nous.html" class="burger-item">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="icone-MenuBurger" onclick="openMenuMobile()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>                  
+        </div> 
     </header>
+    <main>
+        <div class="startTopMargin"> </div>
+        <section class="largeArticle">
+            <h1> TEST d'article</h1>
+            <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
