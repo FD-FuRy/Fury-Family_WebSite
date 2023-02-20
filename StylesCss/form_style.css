@@ -1,0 +1,41 @@
+form input, form textarea, select {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 16px;
+}
+
+form input[type=submit] {
+    width: auto;
+    margin-left: 75px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: rgb(195, 194, 194);
+    box-shadow: 4px 4px 8px black;
+}
+
+form input[type=submit]:hover {
+    background-color: rgb(66, 66, 66);
+    color: white;
+    cursor: pointer;
+}
+
+select {
+    width: 320px;
+}
+textarea {
+    min-height: 160px;
+}
+
+label {
+    font-size: 15px;
+}
+
+.form_comment {
+    color: rgb(171, 211, 250);
+}

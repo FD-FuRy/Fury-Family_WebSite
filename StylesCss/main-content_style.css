@@ -25,7 +25,7 @@ h1 {
     text-shadow: 2px 2px 4px rgb(2, 7, 164);
 }
 
-h2, h3 {
+h2 {
     margin: 0;
     text-shadow: 2px 2px 4px rgb(175, 2, 2);
 }
@@ -53,9 +53,8 @@ h2, h3 {
 .articleColumn {
     display: block;
     min-width: 260px;
-    max-width: 680px;
+    max-width: 670px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
     margin: 10px;
     margin-top: 0;
     border-radius: 20px;
@@ -72,7 +71,7 @@ h2, h3 {
     display: block;
     text-align: center;
     min-width: 260px;
-    max-width: 680px;
+    max-width: 660px;
     width: 100%;
     border-radius: 20px;
     padding: 10px;
@@ -89,24 +88,6 @@ h2, h3 {
     padding: 10px;
 }
 
-@media (max-width: 1380px) {
-    .articleColumnInclude2 {
-        max-width:844px;
-    }
-}
-
-@media (max-width: 1290px) {
-    .articleColumnInclude2 {
-        max-width:785px;
-    }
-}
-
-@media (max-width: 1230px) {
-    .articleColumnInclude2 {
-        max-width:1200px;
-    }
-}
-
 /* Variante moins large d'un article en colonne inclus dans un article large */
 .articleColumnInclude3 {
     display: block;
@@ -118,6 +99,52 @@ h2, h3 {
     padding: 10px;
 }
 
+/* Variante moins large d'un article en colonne inclus dans un article large */
+.articleColumnInclude4 {
+    display: block;
+    min-width: 260px;
+    max-width: 850px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 1380px) {
+    .articleColumnInclude2 {
+        max-width:844px;
+    }
+    .articleColumnInclude4 {
+        max-width:820px;
+        }
+}
+
+@media (max-width: 1290px) {
+    .articleColumnInclude2 {
+        max-width:785px;
+    }
+    .articleColumnInclude4 {
+        max-width: 780px;
+    }
+}
+
+@media (max-width: 1230px) {
+    .articleColumnInclude2 {
+        max-width:630px;
+    }
+    .articleColumnInclude4 {
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 1063px) {
+    .articleColumnInclude2 {
+        max-width:1200px;
+    }
+    .articleColumnInclude4 {
+        max-width: 1400px;
+    }
+}
 
 /* breakpoint: ajustement des articles "colone" en article "pleine largeur" en dessous du point de rupture */
 @media (max-width: 1430px) {

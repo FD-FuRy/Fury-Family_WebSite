@@ -91,6 +91,7 @@ header {
     border-radius: 15px;
     box-shadow: 4px 4px 8px black;
     padding: 13px;
+    cursor: pointer;
 }
 
 .menu-activeItem button{
@@ -104,6 +105,7 @@ header {
     border-radius: 15px;
     box-shadow: 4px 4px 8px black;
     padding: 13px;
+    cursor: pointer;
 }
 
 .menu-item button:hover{
