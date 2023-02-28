@@ -41,6 +41,13 @@ h2 {
     padding: 10px;
 }
 
+/* Définition du container des articles larges (sans background) */
+.largeArticleNoBackground {
+    display:inline-block;
+    width: (100%);;
+    margin-top: 0;
+}
+
 /* Définition du container contenant des petits articles en colonne */
 .smallArticle {
     display: flex;
@@ -49,16 +56,14 @@ h2 {
     align-items: center;
 }
 
-/* Propriétés générales pour chaque article en colonne*/
+/* Propriétés générales pour chaque article en colonne indépendant*/
 .articleColumn {
     display: block;
     min-width: 260px;
-    max-width: 670px;
+    max-width: 644px;
     width: 100%;
-    margin: 10px;
-    margin-top: 0;
-    border-radius: 20px;
-    padding: 10px;
+    margin: 0;
+    border-radius: 20px;;
 }
 
 /* variante 2 d'article en colonne (un container inLine-Block dans l'article) */
@@ -99,7 +104,7 @@ h2 {
     padding: 10px;
 }
 
-/* Variante moins large d'un article en colonne inclus dans un article large */
+/* Variante moyenne d'un article en colonne inclus dans un article large */
 .articleColumnInclude4 {
     display: block;
     min-width: 260px;
@@ -110,7 +115,17 @@ h2 {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
+/* breakpoints: ajustements des articles "colone" en fonction des points de rupture */
+@media (max-width: 1430px) {
+    .articleColumn {
+        max-width: 610px; 
+    } 
+}
+
 @media (max-width: 1380px) {
+    .articleColumn {
+        max-width: 565px; 
+    }
     .articleColumnInclude2 {
         max-width:844px;
     }
@@ -120,6 +135,9 @@ h2 {
 }
 
 @media (max-width: 1290px) {
+    .articleColumn {
+        max-width: 540px; 
+    }
     .articleColumnInclude2 {
         max-width:785px;
     }
@@ -129,6 +147,9 @@ h2 {
 }
 
 @media (max-width: 1230px) {
+    .articleColumn {
+        max-width: 1230px; 
+    }
     .articleColumnInclude2 {
         max-width:630px;
     }
@@ -139,17 +160,10 @@ h2 {
 
 @media (max-width: 1063px) {
     .articleColumnInclude2 {
-        max-width:1200px;
+        max-width:1063px;
     }
     .articleColumnInclude4 {
-        max-width: 1400px;
-    }
-}
-
-/* breakpoint: ajustement des articles "colone" en article "pleine largeur" en dessous du point de rupture */
-@media (max-width: 1430px) {
-    .articleColumn {
-        max-width: 1430px;
+        max-width: 1063px;
     }
 }
 
@@ -166,6 +180,10 @@ h2 {
     left: 0;
     width: 100%;
     height: auto;
+}
+
+.rounded_image {
+    border-radius: 20px;
 }
 
 /* propriétés des images à largeur limitée des articles */
@@ -193,9 +211,7 @@ h2 {
 .largeVideoArticle {
     display: block;
     width: (100%-6px);
-    background-color: rgba(0, 0, 0, 0.75);
-    margin: 10px;
-    margin-top: 0;
+    margin: 0;
     border-radius: 20px;
     padding: 10px;
 }
