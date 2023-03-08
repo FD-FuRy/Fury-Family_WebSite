@@ -29,7 +29,7 @@
                     <li><a href="nos_jeux.html" class="menu-item"><button>NOS JEUX</button></a></li>
                     <li><a href="minecraft.html" class="menu-item"><button>MINECRAFT</button></a></li>
                     <li><a href="discord.html" class="menu-item"><button>DISCORD</button></a></li>
-                    <li><a href="contactez-nous.html" class="menu-activeItem"><button>CONTACT</button></a></li>
+                    <li><a href="contactez-nous.php" class="menu-activeItem"><button>CONTACT</button></a></li>
                 </ul>
             </nav>
         </div>
@@ -45,7 +45,7 @@
                     <li><a href="nos_jeux.html" class="burger-item">NOS JEUX</a></li>
                     <li><a href="minecraft.html" class="burger-item">MINECRAFT</a></li>
                     <li><a href="discord.html" class="burger-item">DISCORD</a></li>
-                    <li><a href="contactez-nous.html" class="burger-activeItem">CONTACT</a></li>
+                    <li><a href="contactez-nous.php" class="burger-activeItem">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -134,7 +134,6 @@
         }
     }
     ?>
-
 </body>
 
 </html>
