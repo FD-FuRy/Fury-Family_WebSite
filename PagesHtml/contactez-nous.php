@@ -109,16 +109,6 @@
             </section>
         </article>
     </main>
-    <footer>
-        <div class="footerContainer">
-            <p class="footerText">Copyright©2023 / Site by FuRy</p>
-            <a href="mentions-legales.html" class="mentionsLegales">➜ mentions légales du site</a>
-            <p> </p>
-        </div>
-    </footer>
-
-    <script src="../script.js"></script>
-
     <?php
     // traitement (envoi email) si le formulaire a été soumis
     if (isset($_POST["message"])) {
@@ -128,12 +118,21 @@
         -----------------------------
         Message: " . $_POST["message"];
 
-        $retour = mail("fd.renov@gmail.com", $_POST["sujet"], $_POST["message"], "From:contact@fd-fury.synology.me" . "\r\n" . "Reply-to:" . $_POST["email"]);
+        $retour = mail("fd.renov@gmail.com", $_POST["sujet"], $message, "From:contact@fury-family.fr" . "\r\n" . "Reply-to:" . $_POST["email"]);
         if ($retour) {
             echo "<p>L'email a bien été envoyé.</p>";
         }
     }
     ?>
+    <footer>
+        <div class="footerContainer">
+            <p class="footerText">Copyright©2023 / Site by FuRy</p>
+            <a href="mentions-legales.html" class="mentionsLegales">➜ mentions légales du site</a>
+            <p> </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
 
 </html>
